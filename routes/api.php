@@ -23,6 +23,3 @@ Route::middleware('auth:sanctum')->group(function () {
 //    Route::post('/logout', [AuthController::class, 'logout']);
     Route::resource('/users', UserController::class);
 });
-
-//Route::get('search/provinces', [ProvinceController::class, 'search'])->middleware('auth:sanctum');
-//Route::get('search/cities', [CityController::class, 'search'])->middleware('auth:sanctum');
