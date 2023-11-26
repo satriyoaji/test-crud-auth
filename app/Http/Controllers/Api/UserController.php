@@ -37,7 +37,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:200',
             'email' => 'required|email|unique:users,email|max:200',
-            'password' => 'required'
+            'password' => 'required|min:8'
         ]);
 
         if ($validator->fails()) {
@@ -88,7 +88,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:200',
             'email' => 'required|max:200|email|unique:users,email,'.$user->id,
-            'password' => 'required'
+//            'password' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -102,7 +102,7 @@ class UserController extends Controller
         $user->update([
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'password' => Hash::make($request->get('password')),
+//            'password' => Hash::make($request->get('password')),
         ]);
 
         return response()->json([
