@@ -45,7 +45,7 @@ class UserController extends Controller
                 'data' => [],
                 'message' => $validator->errors(),
                 'success' => false
-            ]);
+            ], 400);
         }
 
         $user = User::create([
@@ -96,7 +96,7 @@ class UserController extends Controller
                 'data' => [],
                 'message' => $validator->errors(),
                 'success' => false
-            ]);
+            ], 400);
         }
 
         $user->update([
